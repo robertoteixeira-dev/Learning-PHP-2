@@ -1,0 +1,16 @@
+{
+    "name": "teixeira/week2",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Teixeira\\Week2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Roberto Teixeira"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}
