@@ -10,7 +10,6 @@
     It provides a template for a subclass
     You declare the method but without the implementation
 
-
 */
 
 abstract class Banco {

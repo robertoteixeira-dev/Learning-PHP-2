@@ -5,7 +5,7 @@ INHERITANCE
     It allows one object to to aquire or inherite
     the traits and behaviors of another object
 
-    Using the extends key word
+    Using the extends keyword
 
     É um recurso que permite que classes compartilhem
     atributos e métodos afim de reaproveitar códigos

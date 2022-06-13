@@ -1,6 +1,8 @@
 <?php
 
 /*
+
+
     Com métodos estáticos, não precisamos mais instanciar
     a classe, Basta apenas por:
         Login::verificaLogin();
@@ -8,6 +10,8 @@
         Login::$user = "admin";
     O $this NÃO FUNCIONA com membros ESTÁTICOS
         self::$user
+
+
 */
 
 class Login {

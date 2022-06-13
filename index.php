@@ -22,8 +22,3 @@ echo "\n\n";
 echo "your order total is: " . $total;
 
 
-
-
-
-
-

@@ -1,0 +1,58 @@
+
+INSERT INTO customers(id, first_name, last_name, email) VALUES (1,'Roberto', 'Teixeira', 'roberto@gmail.com');
+INSERT INTO customers(id, first_name, last_name, email) VALUES (2,'Ariane', 'Naira', 'arianenaira@gmail.com');
+INSERT INTO customers(id, first_name, last_name, email) VALUES (3,'Jorge', 'Bispo', 'jorge_bispo@gmail.com');
+INSERT INTO customers(id, first_name, last_name, email) VALUES (4,'Luana', 'Oliveira', 'luana.oliveira@gmail.com');
+INSERT INTO customers(id, first_name, last_name, email) VALUES (5,'Marcos', 'Torres', 'torres@gmail.com');
+
+INSERT INTO products(id, type, title, description, unit_price) VALUES (1,'regular', 'Iphone', 'New iphone 13 pro max', 1500);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (2,'digital', 'PHP course', 'Learn PHP 8', 100);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (3,'digital', 'JavaScript Course', 'Learn JavaScript with +10 projects', 75);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (4,'digital', 'Vocal training', 'Learn how to sing as a pro', 50);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (5,'regular', 'Xiaomi', 'Xiaomi note 9', 700);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (6,'regular', 'Aple watch', 'New Apple Watch', 500);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (7,'digital', 'OOP Ebook', 'Learn OOP', 30);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (8,'regular', 'Camera', 'New digital camera', 600);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (9,'regular', 'Sneakers', 'Cool sneakers for sport', 400);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (10,'digital', 'MySQL master training', 'Learn MySQL', 120);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (11,'regular', 'Apple Airpods', 'New Apple AirPods', 300);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (12,'regular', 'Apple Pen', 'Apple Pen for Ipod', 100);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (13,'regular', 'Notebook', 'Cool notebook for study', 10);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (14,'regular', 'Printer', 'The best Printer', 600);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (15,'regular', 'Air conditioner', 'The best air conditioner', 800);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (16,'regular', 'Microwave', 'New microwave', 400);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (17,'regular', 'Microphone', 'Professional microphone', 100);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (18,'regular', 'Guitar', 'Professional guitar', 200);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (19,'digital', 'Youtube master course', 'Be a Youtuber', 150);
+INSERT INTO products(id, type, title, description, unit_price) VALUES (20,'digital', 'Recipis Ebook', 'Healthy Recipis', 40);
+
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (1,1, 1, 400, 3.99, 40.399, 444.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (2,2, 1, 700, 3.99, 70.399, 774.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (3,3, 1, 200, 3.99, 20.399, 224.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (4,3, 2, 1100, 3.99, 110.399, 1214.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (5,3, 2, 600, 3.99, 60.399, 664.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (6,3, 3, 2200, 3.99, 220.399, 2424.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (7,4, 3, 530, 3.99, 53.399, 587.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (8,2, 1, 75, 0, 7.5, 82.5, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (9,3, 3, 1450, 3.99, 145.399, 1599.389, now());
+INSERT INTO orders(id, customer_id, item_count, sub_total, shipping, taxes, grand_total, placed_at) VALUES (10,4, 2, 1400, 3.99, 140.399, 1544.389, now());
+
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (1, 1, 16, 1, 400, 400);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (2, 2, 5, 1, 700, 700);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (3, 3, 18, 1, 200, 200);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (4, 4, 6, 1, 500, 500);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (5, 4, 8, 1, 600, 600);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (6, 5, 6, 1, 500, 500);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (7, 5, 17, 1, 100, 100);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (8, 6, 11, 1, 300, 300);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (9, 6, 1, 1, 1500, 1500);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (10, 6, 9, 1, 400, 400);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (11, 7, 17, 1, 100, 100);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (12, 7, 9, 1, 400, 400);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (13, 7, 7, 1, 30, 30);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (14, 8, 3, 1, 75, 75);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (15, 9, 8, 1, 600, 600);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (16, 9, 19, 1, 150, 150);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (17, 9, 5, 1, 700, 700);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (18, 10, 15, 1, 800, 800);
+INSERT INTO line_items(id, order_id, product_id, quantity, unit_price, item_total) VALUES (19, 10, 8, 1, 600, 600);
