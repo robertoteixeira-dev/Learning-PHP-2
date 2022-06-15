@@ -22,3 +22,4 @@ SELECT count(orders.customer_id) FROM orders INNER JOIN products ON products.tit
 SELECT id FROM orders WHERE placed_at BETWEEN'2022-06-09' AND '2022-06-10';
 SELECT title FROM products WHERE unit_price > 100.00;
 
+
