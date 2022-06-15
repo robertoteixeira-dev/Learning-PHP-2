@@ -34,16 +34,17 @@ class ConnectDB {
         return $this->db;
     }
 
+    /*
     public function executeQuery($sql) {
         $this->db->query($sql);
         return $this->db->lastInsertId();
     }
-
-    /*
+    */
+    
     public function executeQuery($sql) {
         return $this->db->query($sql);
     }
-    */
+    
 }
 
 /*$sql =  'SELECT name, color, calories FROM fruit ORDER BY name';
