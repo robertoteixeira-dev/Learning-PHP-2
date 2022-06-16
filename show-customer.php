@@ -1,11 +1,34 @@
 <?php
 
 include __DIR__ . '/vendor/autoload.php';
-use Teixeira\Week2\{ConnectDB};
+use Teixeira\Week2\{Repository};
 
-### pull a database record that has an id that corresponds to the id query string parameter.
+$customer = new Repository();
 
-// Get id from URL
+$customer->getRecord();
+
+//$customer->insertCustomer();
+
+?>
+
+| Field | Value                                |
+
+|-------|--------------------------------------|
+
+| id    | <?php echo $customer->getID(); ?>    |
+
+| name  | <?php echo $customer->getName(); ?>  |
+
+| email | <?php echo $customer->getEmail(); ?> |
+
+
+
+
+
+<?php
+
+        /*
+        // Get id from URL
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     echo $id;
@@ -24,6 +47,8 @@ if (isset($_GET['id'])) {
         $selectdb = mysqli_select_db($db, "challengedb")  
         or die("Could not select the database");  
         var_dump($selectdb);
+
+        
     
         $select = "SELECT * FROM customers WHERE id=".$id;
     
@@ -43,13 +68,14 @@ if (isset($_GET['id'])) {
         mysqli_free_result($query);
     } else {
         echo "Record not found";
-    }
-} 
+    }*/
 
-echo "\n\n";
+    
+
+
 
 ### Construct a new customer object and display it on a table.
-
+/*
 $username = "root";
 $password = "";
 $hostname = "localhost";
@@ -64,18 +90,6 @@ or die("Could not select the database");
 
 $insert = "INSERT INTO customers VALUES ('Joane', 'França', 'françajoane@gmail.com')";
 
-
-
+*/
 
 ?>
-
-| Field | Value                                |
-
-|-------|--------------------------------------|
-
-| id    | <?php //echo $customer->getID(); ?>    |
-
-| name  | <?php //echo $customer->getName(); ?>  |
-
-| email | <?php //echo $customer->getEmail(); ?> |
-

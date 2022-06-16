@@ -1,37 +1,37 @@
 <?php
 
 include __DIR__ . '/vendor/autoload.php';
-use Teixeira\Week2\{ConnectDB};
+use Teixeira\Week2\{Repository};
 
+$newRecord = new Repository();
+$newRecord->createRecord();
 
-if (isset($_POST['id']) && $_POST['first_name'] !== '' && $_POST['last_name'] !== '' && $_POST['email'] !== '') {
-    $id = $_POST['id'];
-    echo "Operation: Insert","<br>";
-    
-    if( (int)$id == $id && (int)$id > 0 ){
-        $username = "root";
-        $password = "";
-        $hostname = "localhost";
-        
-        // Database connection and select database
-        $db = mysqli_connect($hostname, $username, $password)
-        or die("Unable to connect to the database");  
-        echo ""; 
-    
-        $selectdb = mysqli_select_db($db, "challengedb")  
-        or die("Could not select the database");  
-        var_dump($selectdb);
+?>
 
-        $insert = "INSERT INTO customers(id, first_name, last_name, email) VALUES (".$_POST['id'].",'".$_POST['first_name']."', '".$_POST['last_name']."', '".$_POST['email']."');";
-        if (mysqli_query($db, $insert)) {
-            echo "Record added";
-        } else {
-            die('Error: ' . mysqli_error($con));
-        }
-    }
-}
-
-
-
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create-customer</title>
+</head>
+<body>
+<h1>Register</h1>
+    <form method="post" action="">
+        <p>
+            <label>First Name:</label>
+            <input type="text" name="first_name" placeholder="Your first name"><br>
+        </p>
+        <p>
+            <label>First Name:</label>
+            <input type="text" name="last_name" placeholder="Your last name"><br>
+        </p>
+        <p>
+            <label>First Name:</label>
+            <input type="email" name="email" placeholder="Your email"><br>
+        </p>
+            <button type="submit">Send</button>
+    </form>
+</body>
+</html>
