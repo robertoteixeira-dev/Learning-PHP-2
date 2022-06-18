@@ -3,8 +3,20 @@
 include __DIR__ . '/vendor/autoload.php';
 use Teixeira\Week2\{Repository};
 
-$newRecord = new Repository();
-$newRecord->createRecord();
+$repo = new Repository();
+
+if(isset($_POST['submit'])){
+   
+    $first_name =  $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+
+    $repo->executeQuery("INSERT INTO customers(first_name, last_name, email) VALUES('".$first_name."','".$last_name."', '".$email."')");
+
+    $id = $repo->getLastID();
+    header("Location: show-customer.php?id=".$id);
+    die();
+}
 
 ?>
 
@@ -18,7 +30,7 @@ $newRecord->createRecord();
 </head>
 <body>
 <h1>Register</h1>
-    <form method="post" action="">
+    <form method="post" action="create-customer.php">
         <p>
             <label>First Name:</label>
             <input type="text" name="first_name" placeholder="Your first name"><br>
@@ -31,7 +43,7 @@ $newRecord->createRecord();
             <label>First Name:</label>
             <input type="email" name="email" placeholder="Your email"><br>
         </p>
-            <button type="submit">Send</button>
+            <button type="submit" name= "submit">Send</button>
     </form>
 </body>
 </html>

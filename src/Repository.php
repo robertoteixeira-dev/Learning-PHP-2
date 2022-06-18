@@ -34,73 +34,21 @@ class Repository {
         return $this->db;
     }
 
-    public function getRecord() {
 
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-
-            if( (int)$id == $id && (int)$id > 0 ){
-                $row =  $this->executeQuery("SELECT * FROM customers WHERE id =".$id)->fetchAll();
-            }
-            return json_encode($row);
-        }
+    public function getCustomer($id): Customer {
+        $row =  $this->executeQuery("SELECT * FROM customers WHERE id =".$id)->fetch();
+        return new Customer($row['first_name'], $row['last_name'], $row['email'], $row['id']);
     }
 
-    public function insertCustomer() {
+    /*public function insertCustomer(Customer $customer) {
 
-        $this->executeQuery("INSERT INTO customers VALUES ('id','Ricardo', 'Macedo', 'macedo@gmail.com')");
+        $this->executeQuery("INSERT INTO customers VALUES (".$customer->getID().",'Ricardo', 'Macedo', 'macedo@gmail.com')");
         
         return $this->db->lastInsertId();
-    }
+    }*/
 
-    public function getName(){
-
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-
-            if( (int)$id == $id && (int)$id > 0 ){
-                $row =  $this->executeQuery("SELECT first_name, last_name FROM customers WHERE id=".$id)->fetchAll();
-            }
-            return json_encode($row);
-        }
-    }
-
-    public function getEmail(){
-
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-
-            if( (int)$id == $id && (int)$id > 0 ){
-                $row =  $this->executeQuery("SELECT email FROM customers WHERE id=".$id)->fetchAll();
-            }
-            return json_encode($row);
-        }
-    }
-
-    public function getID(){
-
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-
-            if( (int)$id == $id && (int)$id > 0 ){
-                $row =  $this->executeQuery("SELECT id FROM customers WHERE id=".$id)->fetchAll();
-            }
-            return json_encode($row);
-        }
-    }
-
-    public function createRecord() {
-        if ($_POST) {
-            $first_name =  $_REQUEST['first_name'];
-            $last_name = $_REQUEST['last_name'];
-            $email = $_REQUEST['email'];
-
-            $stmt = $this->db->prepare("INSERT INTO customers  VALUES (id,'$first_name','$last_name','$email')");
-            $stmt->execute();
-            $id = $this->db->lastInsertId();
-            header("Location: show-customer.php?id=".$id);
-            die();
-        }
+    public function getLastID(): int {
+        return $this->db->lastInsertId();
     }
 
     public function executeQuery($sql) {

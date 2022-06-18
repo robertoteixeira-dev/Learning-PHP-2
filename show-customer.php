@@ -3,23 +3,22 @@
 include __DIR__ . '/vendor/autoload.php';
 use Teixeira\Week2\{Repository};
 
-$customer = new Repository();
+$repo = new Repository();
 
-$customer->getRecord();
-
-//$customer->insertCustomer();
+$customer = $repo->getCustomer($_GET['id']);
 
 ?>
 
-| Field | Value                                |
+| Field | Value </br>                                | </br>
 
-|-------|--------------------------------------|
+|-------|--------------------------------------|</br>
 
-| id    | <?php echo $customer->getID(); ?>    |
+| id    | <?php echo $customer->getID(); ?>    | </br>
 
-| name  | <?php echo $customer->getName(); ?>  |
+| name  | <?php echo $customer->getFirstName(); ?>  | </br>
 
-| email | <?php echo $customer->getEmail(); ?> |
+| email | <?php echo $customer->getEmail(); ?> | </br>
+
 
 
 

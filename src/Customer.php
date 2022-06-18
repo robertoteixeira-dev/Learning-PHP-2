@@ -6,8 +6,9 @@ class Customer {
     protected $firstName;
     protected $lastName;
     protected $email;
+    protected $id;
 
-    public function __construct(string $firstName, string $lastName, string $email){
+    public function __construct(string $firstName, string $lastName, string $email, int $id){
         if ($firstName === "") {
             throw new \InvalidArgumentException('First name cannot be empty.');
         }
@@ -23,17 +24,22 @@ class Customer {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->email = $email;
+        $this->id = $id;
     }
 
     public function getEmail(): string {
         return $this->email;
     }
 
-    public function getFistName(): string {
+    public function getFirstName(): string {
         return $this->firstName;
     }
 
     public function getLastName(): float {
         return $this->lastName;
+    }
+
+    public function getID(): int {
+        return $this->id;
     }
 }
